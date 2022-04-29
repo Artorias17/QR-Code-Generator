@@ -1,38 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(168deg, rgba(59,144,251,1) 0%, rgba(97,115,187,1) 50%, rgba(110,80,152,1) 75%, rgba(167,50,122,1) 100%);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+#root {
+    width: 100%;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    margin: 2rem auto;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img {
+    display: block;
+    max-width: 500px;
+    width: 90vw;
+    padding: 2.5rem;
+    margin: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+input, a {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type=text] {
+    color: rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+input[type=text]:focus-visible {
+    color: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+input[type=text]::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: normal;
+}
+
+input[type=submit], a {
+    background: rgba(107, 185, 47, 0.8);
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 20px 0 rgba(59,166,104,0.75);
+}
+
+:is(input[type=submit], a):is(:hover, :active) {
+    background: rgb(107, 185, 47);
+    color: rgba(255, 255, 255, 1);
+}
+
+:is(input[type=submit], a):active {
+    transform: translateY(2px);
+}
+
+:is(input, a):focus-visible {
+    outline: 3px solid rgba(0, 0, 0, 0.30);
 }
